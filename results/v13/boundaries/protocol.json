@@ -1,0 +1,272 @@
+{
+  "revision": "v13",
+  "question": "Hold heater commands fixed while varying defined heat-transfer paths.",
+  "reference_mesh": 4,
+  "conventions": "Each EP-BP interface has the stated added area resistance. Each exposed end uses h and its own half-volume resistance; left fixture is in parallel with external film at the face and leads to the same ambient. The fixture has no separate heat capacity. Sensitivity settings are scaled to the nominal endplate resistance and external conductance, not inferred from data.",
+  "jobs": [
+    {
+      "command": "early",
+      "tau_s": 37.85035485474815,
+      "q_W_cm2": 1.0,
+      "cap_factor": 1.0,
+      "scenario": "ref",
+      "h_W_m2K": 40.0,
+      "Rc_m2K_W": 0.0,
+      "left_fixture_W_K": 0.0,
+      "r": 4
+    },
+    {
+      "command": "extended",
+      "tau_s": 41.25,
+      "q_W_cm2": 1.0,
+      "cap_factor": 1.0,
+      "scenario": "ref",
+      "h_W_m2K": 40.0,
+      "Rc_m2K_W": 0.0,
+      "left_fixture_W_K": 0.0,
+      "r": 4
+    },
+    {
+      "command": "table1",
+      "tau_s": 52.38328643143177,
+      "q_W_cm2": 0.7657588068395853,
+      "cap_factor": 1.0,
+      "scenario": "ref",
+      "h_W_m2K": 40.0,
+      "Rc_m2K_W": 0.0,
+      "left_fixture_W_K": 0.0,
+      "r": 4
+    },
+    {
+      "command": "double",
+      "tau_s": 81.875,
+      "q_W_cm2": 1.0,
+      "cap_factor": 2.0,
+      "scenario": "ref",
+      "h_W_m2K": 40.0,
+      "Rc_m2K_W": 0.0,
+      "left_fixture_W_K": 0.0,
+      "r": 4
+    },
+    {
+      "command": "early",
+      "tau_s": 37.85035485474815,
+      "q_W_cm2": 1.0,
+      "cap_factor": 1.0,
+      "scenario": "low_h",
+      "h_W_m2K": 20.0,
+      "Rc_m2K_W": 0.0,
+      "left_fixture_W_K": 0.0,
+      "r": 4
+    },
+    {
+      "command": "extended",
+      "tau_s": 41.25,
+      "q_W_cm2": 1.0,
+      "cap_factor": 1.0,
+      "scenario": "low_h",
+      "h_W_m2K": 20.0,
+      "Rc_m2K_W": 0.0,
+      "left_fixture_W_K": 0.0,
+      "r": 4
+    },
+    {
+      "command": "table1",
+      "tau_s": 52.38328643143177,
+      "q_W_cm2": 0.7657588068395853,
+      "cap_factor": 1.0,
+      "scenario": "low_h",
+      "h_W_m2K": 20.0,
+      "Rc_m2K_W": 0.0,
+      "left_fixture_W_K": 0.0,
+      "r": 4
+    },
+    {
+      "command": "double",
+      "tau_s": 81.875,
+      "q_W_cm2": 1.0,
+      "cap_factor": 2.0,
+      "scenario": "low_h",
+      "h_W_m2K": 20.0,
+      "Rc_m2K_W": 0.0,
+      "left_fixture_W_K": 0.0,
+      "r": 4
+    },
+    {
+      "command": "early",
+      "tau_s": 37.85035485474815,
+      "q_W_cm2": 1.0,
+      "cap_factor": 1.0,
+      "scenario": "high_h",
+      "h_W_m2K": 80.0,
+      "Rc_m2K_W": 0.0,
+      "left_fixture_W_K": 0.0,
+      "r": 4
+    },
+    {
+      "command": "extended",
+      "tau_s": 41.25,
+      "q_W_cm2": 1.0,
+      "cap_factor": 1.0,
+      "scenario": "high_h",
+      "h_W_m2K": 80.0,
+      "Rc_m2K_W": 0.0,
+      "left_fixture_W_K": 0.0,
+      "r": 4
+    },
+    {
+      "command": "table1",
+      "tau_s": 52.38328643143177,
+      "q_W_cm2": 0.7657588068395853,
+      "cap_factor": 1.0,
+      "scenario": "high_h",
+      "h_W_m2K": 80.0,
+      "Rc_m2K_W": 0.0,
+      "left_fixture_W_K": 0.0,
+      "r": 4
+    },
+    {
+      "command": "double",
+      "tau_s": 81.875,
+      "q_W_cm2": 1.0,
+      "cap_factor": 2.0,
+      "scenario": "high_h",
+      "h_W_m2K": 80.0,
+      "Rc_m2K_W": 0.0,
+      "left_fixture_W_K": 0.0,
+      "r": 4
+    },
+    {
+      "command": "early",
+      "tau_s": 37.85035485474815,
+      "q_W_cm2": 1.0,
+      "cap_factor": 1.0,
+      "scenario": "contact",
+      "h_W_m2K": 40.0,
+      "Rc_m2K_W": 0.00016666666666666666,
+      "left_fixture_W_K": 0.0,
+      "r": 4
+    },
+    {
+      "command": "extended",
+      "tau_s": 41.25,
+      "q_W_cm2": 1.0,
+      "cap_factor": 1.0,
+      "scenario": "contact",
+      "h_W_m2K": 40.0,
+      "Rc_m2K_W": 0.00016666666666666666,
+      "left_fixture_W_K": 0.0,
+      "r": 4
+    },
+    {
+      "command": "table1",
+      "tau_s": 52.38328643143177,
+      "q_W_cm2": 0.7657588068395853,
+      "cap_factor": 1.0,
+      "scenario": "contact",
+      "h_W_m2K": 40.0,
+      "Rc_m2K_W": 0.00016666666666666666,
+      "left_fixture_W_K": 0.0,
+      "r": 4
+    },
+    {
+      "command": "double",
+      "tau_s": 81.875,
+      "q_W_cm2": 1.0,
+      "cap_factor": 2.0,
+      "scenario": "contact",
+      "h_W_m2K": 40.0,
+      "Rc_m2K_W": 0.00016666666666666666,
+      "left_fixture_W_K": 0.0,
+      "r": 4
+    },
+    {
+      "command": "early",
+      "tau_s": 37.85035485474815,
+      "q_W_cm2": 1.0,
+      "cap_factor": 1.0,
+      "scenario": "fixture",
+      "h_W_m2K": 40.0,
+      "Rc_m2K_W": 0.0,
+      "left_fixture_W_K": 0.1,
+      "r": 4
+    },
+    {
+      "command": "extended",
+      "tau_s": 41.25,
+      "q_W_cm2": 1.0,
+      "cap_factor": 1.0,
+      "scenario": "fixture",
+      "h_W_m2K": 40.0,
+      "Rc_m2K_W": 0.0,
+      "left_fixture_W_K": 0.1,
+      "r": 4
+    },
+    {
+      "command": "table1",
+      "tau_s": 52.38328643143177,
+      "q_W_cm2": 0.7657588068395853,
+      "cap_factor": 1.0,
+      "scenario": "fixture",
+      "h_W_m2K": 40.0,
+      "Rc_m2K_W": 0.0,
+      "left_fixture_W_K": 0.1,
+      "r": 4
+    },
+    {
+      "command": "double",
+      "tau_s": 81.875,
+      "q_W_cm2": 1.0,
+      "cap_factor": 2.0,
+      "scenario": "fixture",
+      "h_W_m2K": 40.0,
+      "Rc_m2K_W": 0.0,
+      "left_fixture_W_K": 0.1,
+      "r": 4
+    },
+    {
+      "command": "early",
+      "tau_s": 37.85035485474815,
+      "q_W_cm2": 1.0,
+      "cap_factor": 1.0,
+      "scenario": "combined",
+      "h_W_m2K": 80.0,
+      "Rc_m2K_W": 0.00016666666666666666,
+      "left_fixture_W_K": 0.1,
+      "r": 4
+    },
+    {
+      "command": "extended",
+      "tau_s": 41.25,
+      "q_W_cm2": 1.0,
+      "cap_factor": 1.0,
+      "scenario": "combined",
+      "h_W_m2K": 80.0,
+      "Rc_m2K_W": 0.00016666666666666666,
+      "left_fixture_W_K": 0.1,
+      "r": 4
+    },
+    {
+      "command": "table1",
+      "tau_s": 52.38328643143177,
+      "q_W_cm2": 0.7657588068395853,
+      "cap_factor": 1.0,
+      "scenario": "combined",
+      "h_W_m2K": 80.0,
+      "Rc_m2K_W": 0.00016666666666666666,
+      "left_fixture_W_K": 0.1,
+      "r": 4
+    },
+    {
+      "command": "double",
+      "tau_s": 81.875,
+      "q_W_cm2": 1.0,
+      "cap_factor": 2.0,
+      "scenario": "combined",
+      "h_W_m2K": 80.0,
+      "Rc_m2K_W": 0.00016666666666666666,
+      "left_fixture_W_K": 0.1,
+      "r": 4
+    }
+  ]
+}

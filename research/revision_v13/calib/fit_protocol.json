@@ -1,0 +1,88 @@
+{
+  "parameter_order": [
+    "gamma0",
+    "cl_resistance_factor",
+    "hydration_exponent",
+    "tau_lb",
+    "activation_energy",
+    "gamma_f",
+    "gamma_Db"
+  ],
+  "lower": [
+    0.1,
+    0.01,
+    0.0,
+    0.2,
+    20000.0,
+    0.001,
+    0.5
+  ],
+  "upper": [
+    150.0,
+    10.0,
+    5.0,
+    200.0,
+    90000.0,
+    1.0,
+    5.0
+  ],
+  "first_start": [
+    40.6048,
+    2.9296,
+    3.2382,
+    199.0,
+    73190.0,
+    0.00101,
+    2.0
+  ],
+  "second_start": [
+    3.872983346207416,
+    0.31622776601683805,
+    2.5,
+    6.324555320336758,
+    55000.0,
+    0.0316227766016838,
+    1.5811388300841895
+  ],
+  "reference": {
+    "gamma0": 24.931749774684768,
+    "cl_resistance_factor": 2.5989647664491833,
+    "hydration_exponent": 2.6331129534450834,
+    "tau_lb": 178.23618258809626,
+    "activation_energy": 64901.4784121162,
+    "gamma_f": 0.0016261408980128213,
+    "gamma_Db": 1.77809333372637
+  },
+  "objective_per_record": "Sum of squared normalized RMSEs in voltage and temperature. Scales: 0.02 V and 0.5 K. Joint objective adds the two per-record terms.",
+  "historical_joint": {
+    "records_C": [
+      -20,
+      -25
+    ],
+    "input": "Recovered historical load from column B, total current, with the source model's numerical scale in the following field. This is provenance of the inherited coefficient vector. The paper's single-temperature re-fits read column E directly.",
+    "historical_total_current_to_density_scale_A_per_cm2_per_A": 0.0033003300330033004,
+    "fit_r": 4,
+    "mesh_check_r": 8,
+    "selection_snapshot_evaluations": 20,
+    "selected_evaluation": 19,
+    "retained_evaluations": 40,
+    "optimizer_convergence_certified": false,
+    "solver": "scipy least_squares TRF, x_scale=jac, finite-difference relative step 0.002, ftol=2e-5, xtol=2e-4, gtol=1e-5, log coordinates for coefficients 1,2,4,6,7 (one-based numbering), linear for 3, divide 5 by 10000. The initial parameter values are first_start."
+  },
+  "single_temperature": {
+    "records_C": [
+      -20,
+      -25
+    ],
+    "input": "tabulated current density (column E) linearly interpolated at each time",
+    "fit_r": 2,
+    "reevaluation_r": [
+      2,
+      4
+    ],
+    "forward_calls_per_start": 48,
+    "n_starts": 2,
+    "solver": "scipy least_squares TRF in scaled unit coordinates, relative finite-difference step 0.001, using the SciPy default ftol, xtol and gtol of 1e-8. A hard limit of 48 integrations including finite differences stops each run, including the four archived runs.",
+    "incomplete_penalty": "sum of squares 10000 + 100 * (36.6 - t_stop); all 192 archived evaluations completed"
+  }
+}

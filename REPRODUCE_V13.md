@@ -1,0 +1,7 @@
+# Reproducing the v1.0.0 calculations
+
+Run the commands from the repository root after installing the dependencies in `requirements.txt`. In this manuscript, Table 1 defines the meshes, Table 2 reports the uniform schedules, and Table 3 varies endplate heat capacity.
+
+- **Energy accounting.** Run `python research/revision_v13/check_enthalpy.py`. This reconstructs whole-stack enthalpy from the [simulated nodal fields](results/review_checks/enthalpy/), verifies heater input against the commanded pulses and checks the sensible energy stored in the two endplates.
+- **Boundary conditions and calibration transfer.** Run `python research/revision_v13/uncert/run_boundary.py --output reruns/v13_boundary --workers 2` for the boundary scenarios, and `python research/revision_v13/uncert/run_fit_transfer.py --output reruns/v13_transfer --workers 2` for propagation of the two single-temperature calibrations. The fitting coefficients and five-cell inputs are included. In the frozen protocol the command named `table1` is the uniform 1 °C schedule in the current Table 2. Compare with the [computed temperatures and threshold comparisons](results/v13/boundaries/).
+- **Calibration and search.** Run `python research/revision_v13/calib/check_fits.py` for the parameter evaluations, and `python research/revision_v13/calib/replay_search.py` for the sequential decisions. The [calibration and search instructions](research/revision_v13/calib/README.md) include a full single-temperature refit, which requires a locally held copy of the original competition Problem B Attachment 2.

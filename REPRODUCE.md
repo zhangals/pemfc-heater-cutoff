@@ -1,5 +1,7 @@
 # Reproducing the calculations
 
+[Version 1.0.0 energy, boundary and calibration checks](REPRODUCE_V13.md).
+
 Tests used CPython 3.13.3. Run commands from the repository root in a Python environment with the packages in `requirements.txt` installed. The first solve compiles the numerical kernels. To vary the example, copy `case.json`, edit the copy and run `python run_example.py --case your_case.json`. The expected baseline is in `example_output.json`.
 
 | Paper material | Code | Numerical output |
@@ -14,7 +16,7 @@ Tests used CPython 3.13.3. Run commands from the repository root in a Python env
 | Matched spatial heating | `research/revision_v10_reserve/spatial/run_matched.py`, then `confirm_boundary.py` | `results/spatial/all_cases.csv` |
 | Single-cell fit, cross-temperature predictions and nominal replays | `research/revision_v9_current/numerics/run_recorded.py` | `results/single_cell_fit_metrics.csv` (192 training integrations, eight selected-parameter assessments, four nominal runs) |
 
-The four plotting commands generate images in `regenerated_figures/`. Published stack results use simulated five-cell trajectories. In the matched full-power comparison, switching off at 37.85 s gives a late-window minimum of −0.248 °C. Extending heating to 41.25 s gives 1.567 °C. Table 1's 1 °C uniform case in `run_example.py` uses a lower power and a longer pulse.
+The four plotting commands generate images in `regenerated_figures/`. Published stack results use simulated five-cell trajectories. In the matched full-power comparison, switching off at 37.85 s gives a late-window minimum of −0.248 °C. Extending heating to 41.25 s gives 1.567 °C. Table 2's 1 °C uniform case in `run_example.py` uses a lower power and a longer pulse.
 
 ## Running larger calculations
 
@@ -26,7 +28,7 @@ For a new set of runs use a fresh working copy. The model code is in `代码/`; 
 
 ## Single-cell input
 
-The published single-cell fit requires the original Problem B Attachment 2 from the 2026 China Post-Graduate Mathematical Contest in Modeling. Obtain it from the source or corresponding author subject to the applicable access conditions. Place the workbook at `local_inputs/attachment_2.xlsx` and run `python research/revision_v9_current/numerics/run_recorded.py` from a fresh copy. The reader uses the two original temperature sheets with time in column A, cell voltage in C, mean temperature in D and current density in E. The first two rows contain labels, followed by 184 samples per sheet. The public results give fitted parameters and scalar fit errors. The original workbooks and row-level observations must be obtained separately.
+The published single-cell fit requires the original Problem B Attachment 2 from the 2026 China Post-Graduate Mathematical Contest in Modeling. Access requests can be directed to the organizer through the [competition portal](https://cpipc.acge.org.cn/cw/hp/4). Place the workbook at `local_inputs/attachment_2.xlsx` and run `python research/revision_v9_current/numerics/run_recorded.py` from a fresh copy. The reader uses the two original temperature sheets with time in column A, cell voltage in C, mean temperature in D and current density in E. The first two rows contain labels, followed by 184 samples per sheet. The public results give fitted parameters and scalar fit errors. The original workbooks and row-level observations must be obtained separately.
 
 The bundled [stack time series](results/stack_time_series.zip) contain 600 numerical run stages, with 158,433 stored time points. Each record supplies time in seconds and the five cell-mean temperatures (°C) and voltages (V). The archive index identifies complete and stopped runs. [Checksums and counts](results/stack_time_series_manifest.json) are provided for verification.
 
