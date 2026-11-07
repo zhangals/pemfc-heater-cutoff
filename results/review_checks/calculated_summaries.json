@@ -1,0 +1,66 @@
+{
+  "plate_storage": [
+    {
+      "mesh": 2,
+      "capacity_J_K": 197.5,
+      "rise_K": 3.9265402722710636,
+      "full_storage_J": 775.491703773535,
+      "midpoint_estimate_J": 860.5876632854115,
+      "two_depth_estimate_J": 773.3065653816504,
+      "two_depth_bias_J": -2.185138391884607,
+      "interface_heat_J_trapezoid": 836.8936166244509,
+      "external_loss_J_trapezoid": 60.75395003754809,
+      "sampled_quadrature_difference_J": 0.6479628133678261
+    },
+    {
+      "mesh": 4,
+      "capacity_J_K": 197.5,
+      "rise_K": 3.9296665588320887,
+      "full_storage_J": 776.1091453693375,
+      "midpoint_estimate_J": 862.2350299207866,
+      "two_depth_estimate_J": 774.3213830305951,
+      "two_depth_bias_J": -1.7877623387423682,
+      "interface_heat_J_trapezoid": 837.5118238445804,
+      "external_loss_J_trapezoid": 60.753059520562395,
+      "sampled_quadrature_difference_J": 0.6496189546804771
+    }
+  ],
+  "spatial_distribution": {
+    "n": 5,
+    "active_cells": [
+      1
+    ],
+    "active_time_s": [
+      120.0
+    ],
+    "ranges": {
+      "cutoff_end_minus_center_K": {
+        "min": -17.929613491605934,
+        "max": -14.971748328310607,
+        "span": 2.9578651632953274
+      },
+      "120s_end_minus_center_K": {
+        "min": -4.082879980203835,
+        "max": -4.082177113698027,
+        "span": 0.0007028665058079753
+      },
+      "late_minimum_mea_mean_C": {
+        "min": 1.0857789636805926,
+        "max": 1.101179899706663,
+        "span": 0.01540093602607051
+      }
+    }
+  },
+  "finest_mesh_window_minima_C": {
+    "boundary_edge_inner_minus": 0.9981776445515906,
+    "boundary_uniform": 0.9907507780206656,
+    "spatial_1_back_loaded": 0.9751631904055499,
+    "spatial_1_constant": 1.1746160724739436,
+    "spatial_1_front_loaded": 1.2485367372331784,
+    "uniform_0.01_constant": 0.13323845871496026,
+    "uniform_1_back_loaded": 0.9949189761943857,
+    "uniform_1_constant": 1.0880067056681755,
+    "uniform_1_front_loaded": 1.1006933630453677,
+    "uniform_3_constant": 3.190200159480828
+  }
+}
