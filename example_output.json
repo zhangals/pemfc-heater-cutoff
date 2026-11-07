@@ -1,0 +1,13 @@
+{
+  "solver_status": "COMPLETE",
+  "final_time_s": 180.0,
+  "command_energy_J": 5014.120364508679,
+  "interval_s": [
+    120,
+    180
+  ],
+  "continuous_minimum_C": 1.093941808099272,
+  "time_of_minimum_s": 120.0,
+  "limiting_cell": 1,
+  "passes": true
+}

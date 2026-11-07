@@ -1,0 +1,109 @@
+{
+  "protocol_sha256": "9c8d446971a1fa6085cbc74aa8565e97151b3c2266a2db7005be292176a042e5",
+  "selection_rule": "For each family/reserve select the lower-energy candidate among the two seeds that passes both fine grids. If none passes, mark unavailable.",
+  "representatives": [
+    {
+      "family": "uniform",
+      "reserve_C": 0.01,
+      "seed": 20261107,
+      "chain_id": "uniform_T0p01_seed20261107",
+      "design_x": [
+        0.7004289124161005,
+        54.61497060954571
+      ],
+      "planned_energy_J": 4781.738058210174,
+      "source_search_job": "uniform_T0p01_seed20261107_eval30",
+      "validation_jobs": [
+        "val_uniform_T0p01_seed20261107_r2",
+        "val_uniform_T0p01_seed20261107_r4"
+      ]
+    },
+    {
+      "family": "uniform",
+      "reserve_C": 1,
+      "seed": 20261107,
+      "chain_id": "uniform_T1_seed20261107",
+      "design_x": [
+        0.7657588068395853,
+        52.38328643143177
+      ],
+      "planned_energy_J": 5014.120364508679,
+      "source_search_job": "uniform_T1_seed20261107_eval21",
+      "validation_jobs": [
+        "val_uniform_T1_seed20261107_r2",
+        "val_uniform_T1_seed20261107_r4"
+      ]
+    },
+    {
+      "family": "uniform",
+      "reserve_C": 3,
+      "seed": 20261107,
+      "chain_id": "uniform_T3_seed20261107",
+      "design_x": [
+        0.7063962109386921,
+        63.17669652402401
+      ],
+      "planned_energy_J": 5578.472380524275,
+      "source_search_job": "uniform_T3_seed20261107_eval31",
+      "validation_jobs": [
+        "val_uniform_T3_seed20261107_r2",
+        "val_uniform_T3_seed20261107_r4"
+      ]
+    },
+    {
+      "family": "spatial",
+      "reserve_C": 0.01,
+      "seed": 20261106,
+      "chain_id": "spatial_T0p01_seed20261106",
+      "design_x": [
+        0.2677617138251662,
+        0.7583732707425952,
+        0.9982116026803851,
+        64.6898103505373
+      ],
+      "planned_energy_J": 4933.376858964501,
+      "source_search_job": "spatial_T0p01_seed20261106_eval07",
+      "validation_jobs": [
+        "val_spatial_T0p01_seed20261106_r2",
+        "val_spatial_T0p01_seed20261106_r4"
+      ]
+    },
+    {
+      "family": "spatial",
+      "reserve_C": 1,
+      "seed": 20261107,
+      "chain_id": "spatial_T1_seed20261107",
+      "design_x": [
+        0.706678032875061,
+        0.7009255923330784,
+        0.6129316799342632,
+        58.843403309583664
+      ],
+      "planned_energy_J": 5043.084041997542,
+      "source_search_job": "spatial_T1_seed20261107_eval32",
+      "validation_jobs": [
+        "val_spatial_T1_seed20261107_r2",
+        "val_spatial_T1_seed20261107_r4"
+      ]
+    },
+    {
+      "family": "spatial",
+      "reserve_C": 3,
+      "seed": 20261106,
+      "chain_id": "spatial_T3_seed20261106",
+      "design_x": [
+        0.5,
+        0.5,
+        0.5,
+        90
+      ],
+      "planned_energy_J": 5625.0,
+      "source_search_job": "spatial_T3_seed20261106_eval03",
+      "validation_jobs": [
+        "val_spatial_T3_seed20261106_r2",
+        "val_spatial_T3_seed20261106_r4"
+      ]
+    }
+  ],
+  "unavailable": []
+}

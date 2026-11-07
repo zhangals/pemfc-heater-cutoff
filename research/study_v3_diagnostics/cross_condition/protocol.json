@@ -1,0 +1,33 @@
+{
+  "starts": [
+    [
+      40.6048,
+      2.9296,
+      3.2382,
+      199.0,
+      73190.0,
+      0.00101,
+      2.0
+    ],
+    [
+      3.872983346207416,
+      0.31622776601683805,
+      2.5,
+      6.324555320336758,
+      55000.0,
+      0.0316227766016838,
+      1.5811388300841895
+    ]
+  ],
+  "incomplete_candidate": "Constant residual sqrt((10000+100*(36.6-tstop))/368); never compute truncated RMSE.",
+  "objective": "All training points only: concatenate((V-Vobs)/.02,(T-Tobs)/.5)/sqrt(184). Scales are weights, not sensor uncertainties.",
+  "optimizer": "bounded scipy least_squares, trf, diff_step=1e-3, transformed coordinates",
+  "parameter_selection": "Minimum complete training objective across both starts; never use other-temperature outputs to rank candidates.",
+  "geometry": "Supplied single-cell build_mesh, no endplates; all parameters outside selected seven fixed to supplied model.",
+  "numerics": {
+    "rtol": 1e-07,
+    "max_step": 0.05,
+    "max_wall_s": 90
+  },
+  "interpretation": "Post-hoc cross-condition prediction: model structure, parameter bounds and original starting point have previously seen both records; not independent measured validation."
+}

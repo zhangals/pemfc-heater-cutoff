@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+local_inputs/
+regenerated_figures/
+research/study_v2/runtime/
+*.xlsx

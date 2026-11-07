@@ -1,0 +1,5 @@
+﻿family,profile,fine_discordance,r2_feasible,r4_feasible,r2_minimum_dense_window_C,r4_minimum_dense_window_C,interpretation
+uniform,front_loaded,False,True,True,1.1068173533759829,1.1055037350715637,Agreement of the two evaluated grid classifications; not an experimental or robustness guarantee.
+uniform,back_loaded,True,True,False,1.006314402547188,0.9994332558340793,Refinement-dependent nominal threshold classification; no physical violation or uncertainty robustness is inferred.
+spatial,front_loaded,False,True,True,1.265316900518262,1.2546159574148075,Agreement of the two evaluated grid classifications; not an experimental or robustness guarantee.
+spatial,back_loaded,False,False,False,0.9717848635618793,0.9787384427798104,Agreement of the two evaluated grid classifications; not an experimental or robustness guarantee.

@@ -1,0 +1,7 @@
+﻿family,reserve_C,scenarios,design_reserve_retained,melting_region_criterion_retained,numerically_unresolved,state_counts
+uniform,0.01,10,6,6,0,"{""reserve_retained"": 6, ""both_targets_lost"": 4}"
+uniform,1,10,6,9,0,"{""reserve_retained"": 6, ""reserve_lost_melting_region_retained"": 3, ""both_targets_lost"": 1}"
+uniform,3,10,6,9,0,"{""reserve_retained"": 6, ""reserve_lost_melting_region_retained"": 3, ""both_targets_lost"": 1}"
+spatial,0.01,10,8,8,0,"{""reserve_retained"": 8, ""both_targets_lost"": 2}"
+spatial,1,10,6,9,0,"{""reserve_retained"": 6, ""reserve_lost_melting_region_retained"": 3, ""both_targets_lost"": 1}"
+spatial,3,10,6,9,0,"{""reserve_retained"": 6, ""reserve_lost_melting_region_retained"": 3, ""both_targets_lost"": 1}"

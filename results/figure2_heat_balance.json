@@ -1,0 +1,152 @@
+[
+  {
+    "policy": "preheat",
+    "refine": 1,
+    "post_minimum_time_s": 18.570982464609607,
+    "post_minimum_C": -3.6537032498065756,
+    "storage_change_J": {
+      "all": 499.44392673113623,
+      "MEA": -6.859015854475034,
+      "BP": -349.62275695421835,
+      "EP": 855.9256995398297
+    },
+    "mea_contributions_J": {
+      "conduction": -572.7353096321242,
+      "auxiliary": 0.0,
+      "reaction": 717.7643954439803,
+      "phase": -151.8881087297447,
+      "convection_signed": 0.0
+    },
+    "phase_components_J": {
+      "vapor_bound": 6.3785458752841935,
+      "condensation_evaporation": -158.26666404889866,
+      "deposition_sublimation": -1.21259971876803e-08,
+      "freezing_melting": 9.455995813354972e-06
+    }
+  },
+  {
+    "policy": "preheat",
+    "refine": 2,
+    "post_minimum_time_s": 18.426358816748078,
+    "post_minimum_C": -3.5987988364461985,
+    "storage_change_J": {
+      "all": 500.63548159254174,
+      "MEA": -6.794076021553973,
+      "BP": -346.27713521037373,
+      "EP": 853.7066928244694
+    },
+    "mea_contributions_J": {
+      "conduction": -573.3210581002179,
+      "auxiliary": 0.0,
+      "reaction": 716.9157264162837,
+      "phase": -150.388749459077,
+      "convection_signed": 0.0
+    },
+    "phase_components_J": {
+      "vapor_bound": 6.622668268621636,
+      "condensation_evaporation": -157.01142671119248,
+      "deposition_sublimation": -1.1737589761340208e-08,
+      "freezing_melting": 8.995231326514118e-06
+    }
+  },
+  {
+    "policy": "preheat",
+    "refine": 4,
+    "post_minimum_time_s": 18.45471427985558,
+    "post_minimum_C": -3.58999784105213,
+    "storage_change_J": {
+      "all": 502.33643018963653,
+      "MEA": -6.786325631016267,
+      "BP": -345.7893299356582,
+      "EP": 854.9120857563111
+    },
+    "mea_contributions_J": {
+      "conduction": -575.1392932143776,
+      "auxiliary": 0.0,
+      "reaction": 718.6807801829698,
+      "phase": -150.32780709608093,
+      "convection_signed": 0.0
+    },
+    "phase_components_J": {
+      "vapor_bound": 6.929981436971981,
+      "condensation_evaporation": -157.25779742109353,
+      "deposition_sublimation": -1.175972096461927e-08,
+      "freezing_melting": 8.899800295605853e-06
+    }
+  },
+  {
+    "policy": "concurrent",
+    "refine": 1,
+    "post_minimum_time_s": 20.328510977913975,
+    "post_minimum_C": -4.837094050674462,
+    "storage_change_J": {
+      "all": 508.3054224269845,
+      "MEA": -8.503007565576192,
+      "BP": -422.5021632851258,
+      "EP": 939.3105932776866
+    },
+    "mea_contributions_J": {
+      "conduction": -585.5940151754286,
+      "auxiliary": 0.0,
+      "reaction": 743.4245591095045,
+      "phase": -166.33353815539493,
+      "convection_signed": 0.0
+    },
+    "phase_components_J": {
+      "vapor_bound": 7.246250727172024,
+      "condensation_evaporation": -173.57980572285783,
+      "deposition_sublimation": -5.333896894127719e-08,
+      "freezing_melting": 1.6893629751454335e-05
+    }
+  },
+  {
+    "policy": "concurrent",
+    "refine": 2,
+    "post_minimum_time_s": 20.157995091578712,
+    "post_minimum_C": -4.790737021654442,
+    "storage_change_J": {
+      "all": 508.8454523030662,
+      "MEA": -8.444706136423935,
+      "BP": -419.4539062406424,
+      "EP": 936.7440646801325
+    },
+    "mea_contributions_J": {
+      "conduction": -585.4449140536623,
+      "auxiliary": 0.0,
+      "reaction": 741.635619126993,
+      "phase": -164.6354355548944,
+      "convection_signed": 0.0
+    },
+    "phase_components_J": {
+      "vapor_bound": 7.4616040156463335,
+      "condensation_evaporation": -172.09705559119314,
+      "deposition_sublimation": -5.3431681266474784e-08,
+      "freezing_melting": 1.6074083955268158e-05
+    }
+  },
+  {
+    "policy": "concurrent",
+    "refine": 4,
+    "post_minimum_time_s": 20.164104514032285,
+    "post_minimum_C": -4.780115123013825,
+    "storage_change_J": {
+      "all": 510.0358636164319,
+      "MEA": -8.435135674733411,
+      "BP": -418.88670153423067,
+      "EP": 937.3577008253958
+    },
+    "mea_contributions_J": {
+      "conduction": -586.657353408133,
+      "auxiliary": 0.0,
+      "reaction": 742.6237570352288,
+      "phase": -164.40155092055738,
+      "convection_signed": 0.0
+    },
+    "phase_components_J": {
+      "vapor_bound": 7.7537904309330985,
+      "condensation_evaporation": -172.15535714948484,
+      "deposition_sublimation": -5.385293760424393e-08,
+      "freezing_melting": 1.585184732178761e-05
+    }
+  }
+]

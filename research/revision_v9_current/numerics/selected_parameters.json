@@ -1,0 +1,24 @@
+{
+  "-20": {
+    "parameters": {
+      "gamma0": 8.266640130603964,
+      "cl_resistance_factor": 3.4970355588100084,
+      "hydration_exponent": 2.9707437246706405,
+      "tau_lb": 6.1256895458715075,
+      "activation_energy": 51666.30614579555,
+      "gamma_f": 0.04261416947057279,
+      "gamma_Db": 2.5960363079528044
+    }
+  },
+  "-25": {
+    "parameters": {
+      "gamma0": 36.35897114512113,
+      "cl_resistance_factor": 3.013282561474364,
+      "hydration_exponent": 2.2443191708833603,
+      "tau_lb": 6.1143025619643945,
+      "activation_energy": 65959.1668100612,
+      "gamma_f": 0.027610192630996216,
+      "gamma_Db": 2.7545361283296748
+    }
+  }
+}

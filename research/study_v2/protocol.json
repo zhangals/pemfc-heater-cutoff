@@ -1,0 +1,247 @@
+{
+  "study_id": "sustained_heating_v2_20261106",
+  "status": "scientific_protocol_frozen_before_execution",
+  "research_question": "How do positive temperature reserve and spatial heater allocation change low-energy feasible PEMFC cold-start schedules under a common load and operating horizon?",
+  "hypotheses_not_assumed_results": [
+    "First crossing of the melting region may not sustain the subsequent heater-off load.",
+    "Increasing prescribed temperature reserve changes energy demand and sensitivity to operating conditions.",
+    "Spatial allocation may improve on jointly tuned uniform power and cutoff; either comparison direction is admissible.",
+    "Temporal heat profiles may change thermal reserve and electrical output even at matched per-cell energy and cutoff."
+  ],
+  "reuse_policy": {
+    "old_results": "Forbidden as scientific inputs or caches.",
+    "old_optimized_candidates": "Forbidden as search initializations.",
+    "allowed": "Original physical model, solver and parameter assumptions; raw observation workbook.",
+    "execution": "All v2 evaluations are new integrations. Existing result IDs cannot be overwritten or loaded by a worker as caches.",
+    "restart": "Only the orchestrator may recognize completed v2 IDs to avoid relaunch after interruption; old-study records never satisfy a v2 job."
+  },
+  "model": {
+    "cells": 5,
+    "active_area_cm2": 25,
+    "parameter_base": "Config(**FROZEN_CONFIG)",
+    "mesh": "build_shared",
+    "backend": "numba",
+    "initial_C": -30,
+    "ambient_C": -30,
+    "h_W_m2K": 40,
+    "lambda0": 3,
+    "initial_free_vapor_liquid_ice": 0,
+    "gamma_f_factor": 1
+  },
+  "operating_protocol": {
+    "horizon_s": 180,
+    "window_s": [
+      120,
+      180
+    ],
+    "temperature_reserves_C": [
+      0.01,
+      1,
+      3
+    ],
+    "primary_temperature_reserve_C": 1,
+    "coarse_search_numerical_allowance_K": 0.1,
+    "current_A_cm2": "min(0.005*max(t,0),0.30)",
+    "voltage_floor_V": 0.3,
+    "stop_at_first_threshold": false,
+    "thermal_scope": "Minimum thickness-weighted MEA mean temperature over all five cells.",
+    "design_assumptions": "Declared deadlines, holding duration and temperature reserves are test requirements, not standards or empirically established safety margins."
+  },
+  "numerics": {
+    "rtol": 1e-7,
+    "max_step_s": 0.05,
+    "sample_dt_s": 0.5,
+    "initial_max_step_s": 0.01,
+    "initial_step_interval_s": 0.1,
+    "absolute_tolerances": "Native scaled model.atol; export full vectors.",
+    "search_refine": 1,
+    "validation_refines": [
+      2,
+      4
+    ],
+    "jacobian": "Supplied active phase-branch Jacobian for fixed heating; exact recipe recorded per job.",
+    "dense_validation": "Accepted BDF temperature-polynomial extrema over the specified interval.",
+    "max_wall_s": 900,
+    "retry_rule": "No automatic physical-input changes. Preserve unresolved runs. Numerical retries or implementation corrections use new IDs and amendment records."
+  },
+  "design_families": {
+    "uniform": {
+      "variables": [
+        "q",
+        "cutoff_s"
+      ],
+      "bounds": [
+        [
+          0,
+          1
+        ],
+        [
+          10,
+          90
+        ]
+      ],
+      "powers": "(q,q,q,q,q)"
+    },
+    "spatial": {
+      "variables": [
+        "q_edge",
+        "q_inner",
+        "q_center",
+        "cutoff_s"
+      ],
+      "bounds": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          10,
+          90
+        ]
+      ],
+      "powers": "(q_edge,q_inner,q_center,q_inner,q_edge)"
+    }
+  },
+  "search": {
+    "method": "Feasibility-weighted Bayesian search with analytically known auxiliary energy.",
+    "seeds": [
+      20261106,
+      20261107
+    ],
+    "evaluations_per_family_per_reserve_per_seed": 32,
+    "initial_evaluations": 8,
+    "anchors_uniform_q_and_cutoff": [
+      [
+        1,
+        90
+      ],
+      [
+        1,
+        60
+      ],
+      [
+        0.5,
+        90
+      ],
+      [
+        0.2,
+        60
+      ]
+    ],
+    "initial_remaining": "Four scrambled Sobol points in each family's bounds.",
+    "additional_evaluations": 24,
+    "candidate_pool_per_iteration": 4096,
+    "margin_model": "Gaussian process with Matern nu=2.5, completed margins only.",
+    "completion_model": "Gaussian-process classifier; unresolved numerical runs excluded.",
+    "acquisition": "max(best_feasible_energy-candidate_energy,0)*P(margin>=0)*P(admissible completion); maximize feasibility probability if no incumbent or no positive acquisition.",
+    "planned_search_integrations": 384,
+    "independence": "Each family/reserve/seed chain starts afresh; no cross-chain model training. Seed repetitions are search dependence, not physical replicates."
+  },
+  "selection_and_validation": {
+    "selection": "Select the lowest auxiliary-energy feasible candidate in each 32-evaluation chain before viewing refinement outcomes.",
+    "fine_validation": "Reintegrate every selected candidate at r=2 and r=4 without retuning; test the specified reserve without coarse allowance.",
+    "failed_refinement": "Report failure; no silent substitution or retuning.",
+    "representative_for_perturbations": "For each family/reserve select the lower-energy candidate among the two seeds that passes both fine grids. If none passes, mark unavailable.",
+    "comparison_scope": "Best evaluated schedules in finite declared budgets, not global minima or optimizer superiority."
+  },
+  "fresh_supporting_experiments": {
+    "first_crossing_and_continuation": {
+      "policies": [
+        "uniform preheating at 1 W/cm2, zero current",
+        "uniform concurrent heating at 1 W/cm2, prescribed ramp"
+      ],
+      "refines": [
+        1,
+        2,
+        4
+      ],
+      "first_crossing_C": 0.01,
+      "first_crossing_horizon_s": 300,
+      "continuation": "Preserve physical terminal states, zero heaters, 0.30 A/cm2 for 60 s; evaluate dense minima and continuous duration above 0 and 0.01 C."
+    },
+    "perturbations": {
+      "one_factor_at_a_time": {
+        "h_W_m2K": [
+          20,
+          60
+        ],
+        "lambda0": [
+          2.5,
+          3.5
+        ],
+        "gamma_f_factor": [
+          0.5,
+          2
+        ],
+        "initial_and_ambient_C": [
+          -35,
+          -25
+        ],
+        "heater_realization_factor": [
+          0.95,
+          1.05
+        ]
+      },
+      "heater_realization_rule": "Multiply commands; 1.05 W/cm2 is an actuator perturbation, not an admissible design command.",
+      "refine": 2,
+      "plans": "All available family/reserve representatives, no retuning.",
+      "probability_interpretation": "Deterministic stress scenarios without probability weights."
+    },
+    "matched_energy_waveforms": {
+      "plans": "Available uniform and spatial representatives for primary reserve 1 C.",
+      "refines": [
+        2,
+        4
+      ],
+      "profiles": [
+        "front_loaded",
+        "back_loaded"
+      ],
+      "per_cell_amplitude": "delta_k=min(0.25*q_k,0.95*(1-q_k))",
+      "front_loaded": "q_k+delta_k during first half; q_k-delta_k during second half.",
+      "back_loaded": "Reverse the two halves.",
+      "matching": "Same initial state, cutoff and per-cell integrated energy; powers in [0,1]. Report zero modulation at q_k=1."
+    },
+    "observation_reproduction": {
+      "temperatures_C": [
+        -20,
+        -25
+      ],
+      "conventions": [
+        "I/303",
+        "recorded_current_density_column"
+      ],
+      "refines": [
+        2,
+        4
+      ],
+      "backend": "numpy",
+      "refitting": false,
+      "scope": "Eight new integrations, including identical columns at -25 C. Calibration-record reproduction, not independent physical validation."
+    }
+  },
+  "primary_outputs": [
+    "auxiliary energy",
+    "minimum cell-mean temperature over 120-180 s",
+    "fine-grid feasibility"
+  ],
+  "secondary_outputs": [
+    "hydrogen thermoneutral energy",
+    "electrical output",
+    "net model input",
+    "minimum voltage",
+    "thermal storage and local ice diagnostics",
+    "water and enthalpy residuals",
+    "stress feasibility",
+    "matched-profile response"
+  ],
+  "reporting_rule": "Preserve all evaluations, failures, null margins and refinement outcomes. Draw conclusions after executing this protocol, including null or contrary findings."
+}
